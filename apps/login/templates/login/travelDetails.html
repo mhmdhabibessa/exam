@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/details_travel.css' %}">  
+    <title>Document</title>
+</head>
+<body>
+        <div>
+            <nav>
+                <a href="/travels">Home</a>
+                <a href="/logout">Logout</a>
+            </nav>
+        </div>
+    <p>{{travel.destination}}</p>
+    <p> palned by : {{travel.name}}</p>
+    <p>{{travel.description}}</p>
+    <p>{{travel.start_data}}</p>
+    <p>{{travel.end_data}}</p>
+    <div>
+        <ul class="list">
+            <h3>User Also Join to Trip</h3>
+            {% for i in travel.user_join_to_trip.all %}
+            <li>{{i.first_name}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

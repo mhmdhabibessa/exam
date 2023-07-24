@@ -1,0 +1,33 @@
+nav {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px gray;
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: x-large  ;
+}
+.addTravelsButton {
+    background-color: rgb(224, 223, 223);
+    padding: 15px;
+    font-size: medium;
+    border-radius: 5px;
+    color: black;
+}
+
+table {
+    margin-top: 25px;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

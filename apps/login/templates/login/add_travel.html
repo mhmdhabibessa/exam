@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <nav>
+        <a href="/travels">Home</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <div>
+        <form action="/craete-travel" method="post" class="form-example">
+            {% csrf_token %}
+            <div class="form-example">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="form-example">
+                <label for="email">destination: </label>
+                <input type="text" name="destination" id="filling">
+            </div>
+            <div class="form-example">
+                <label for="email">Descrition: </label>
+                <input type="text" name="description" id="crust">
+            </div>
+            <div class="form-example">
+                <label for="email">Start Date: </label>
+                <input type="date" name="start_data" id="crust">
+            </div>
+            <div class="form-example">
+                <label for="email">End Date: </label>
+                <input type="date" name="end_data" id="crust">
+            </div>
+            <div class="form-example">
+                <input type="submit" value="Create Travels">
+            </div>
+        </form>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

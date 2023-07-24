@@ -1,0 +1,35 @@
+body{
+    background-color: antiquewhite;
+}
+nav {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px gray;
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: x-large  ;
+}
+form{
+    margin: 50px;
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+}
+form input {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 4px;
+}
+h2{
+    margin-bottom: 20px;
+}
+p{
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.messages{
+    color: red;
+    margin-top: 20px;
+}

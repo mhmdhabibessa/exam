@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/travels.css' %}">
+</head>
+<body>
+  <nav>
+    <a href="/travels">Home</a>
+    <a href="/logout">Logout</a>
+</nav>
+<h2>HTML Table , {{user.first_name}}</h2>
+<div>
+    <a  href="/add_travel">
+        <button class="addTravelsButton">Add Travel</button>
+    </a>
+</div>
+
+<table>
+    <tr>
+      <th>Destination</th>
+      <th>Travel Start Date</th>
+      <th>Travel End Date</th>
+      <th>Plane</th>
+    </tr>
+    {% for travel  in user.user_join_to_trip.all %}
+    <tr>
+      <td> <a href="travels/destination/{{travel.id}}"> {{ travel.name }} </a></td>
+      <td>  {{ travel.start_data }}</td>
+      <td>{{ travel.end_data }}</td>
+      <td>{{ travel.destination }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+<table style="margin-top: 20px; background-color: antiquewhite;">
+  <tr>
+    <th>Name</th>
+    <th>Travel Start Date</th>
+    <th>Travel End Date</th>
+    <th>Plane</th>
+    <th>Do You want to Join</th>
+  </tr>
+
+  {% for travel in travels %}
+  <tr>
+    <td>{{ travel.name }}</td>
+    <td> {{ travel.destination }}</td>
+    <td>{{ travel.start_data }}</td>
+    <td>{{ travel.end_data }}</td>
+    {% if user in travel.user_join_to_trip.all %}
+        <td> <p>You Are Joined this Trip</p> 
+            <a href="unjoin/{{travel.id}}">Un Join</a>
+        </td>
+    {% else %}
+    <td><a href="/join/{{travel.id}}">Join</a></td>
+    {% endif %}
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
+
